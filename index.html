@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/moon.svg">
+    <link rel="stylesheet" href="style.css">
+    <title>Simulador de Órbitas</title>
+</head>
+<body>
+    <div class="container">
+        <p class="title__item">Simulación de Órbita</p>
+        <div class="controls">
+            <label for="earthAngle">Ángulo inicial de la Tierra: (En grados)</label>
+            <input type="number" id="earthAngle" value="0">
+            <label for="moonAngle">Ángulo inicial de la Luna</label>
+            <input type="number" id="moonAngle" value="0">
+            
+            <select id="controls">
+                <option value="pause">Pausar</option>
+                <option value="normalSpeed">Velocidad Normal</option>
+                <option value="increaseSpeed">Aumentar Velocidad</option>
+                <option value="decreaseSpeed">Disminuir Velocidad</option>
+
+            </select>
+            <button id="ApplyControls">Aplicar</button>
+            <button id="startSimulation">Iniciar Simulación</button>
+        </div>
+        <canvas id="simulator"></canvas>
+    </div>
+    <script src="config.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
