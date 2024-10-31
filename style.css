@@ -1,0 +1,36 @@
+body {
+    background-color: rgb(44, 44, 44);
+    font-family: "Raleway", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Aumenta al 100% para dar espacio completo */
+    height: auto; /* Ajuste para que se adapte al contenido */
+}
+
+
+.title__item {
+    color: antiquewhite;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 25px; 
+}
+
+
+canvas {
+    width: 800px; /* Ancho del canvas */
+    height: 600px; /* Altura del canvas */
+    background: radial-gradient(circle, rgba(20, 20, 20, 1) 20%, rgba(0, 0, 0, 1) 80%);
+    border: 1px solid #ffffff;
+}
+
