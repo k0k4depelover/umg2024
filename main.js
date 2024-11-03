@@ -33,6 +33,8 @@ let currentSpeed = 1;
 let isPaused = false;
 let earthTrail = [];
 let moonTrail = [];
+let radiusOrbitFixed;
+let massPlanetFixed;
 const fadeDuration = 50; // Duración máxima de la vida de un punto
 let G= 6.674e-11;
 
@@ -238,15 +240,16 @@ document.getElementById("ApplyControls").addEventListener("click", function() {
 document.getElementById("calculateResult").addEventListener("click", function calculate() {
     // Obtener los valores de los inputs y convertirlos a número
     const radiusOrbit = parseFloat(document.getElementById("inputRadio").value); // radio en metros
-    const massPlanet = parseFloat(document.getElementById("inputEarth").value) * 1e24; // masa en kg
+    const massPlanet = parseFloat(document.getElementById("inputEarth").value); // masa en kg
 
-    radiusOrbitFixed=radiusOrbit*10e6;
-    massPlanetFixed=massPlanet*10e6;
+    radiusOrbitFixed=radiusOrbit*10e11;
+    massPlanetFixed=massPlanet*10e24;
     // Calcular el período de órbita
-    const periodOrbit = radiusOrbitFixed * Math.sqrt(radiusOrbitFixed / (massPlanetFixed * G));
+    const periodOrbit = 2*Math.PI*radiusOrbitFixed * Math.sqrt(radiusOrbitFixed / (massPlanetFixed * G));
 
     // Mostrar el resultado en el campo de texto
     document.getElementById("result").value = periodOrbit.toFixed(20); // Formato a dos decimales
     alert("El periodo ha sido calculado");
 });
+
 
