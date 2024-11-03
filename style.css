@@ -1,36 +1,171 @@
-body {
-    background-color: rgb(44, 44, 44);
-    font-family: "Raleway", sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+/* Reset básico */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
+/* Estilo para la página y el contenedor principal */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0a0a23;
+    color: #e0e0e0;
+}
+
+/* Contenedor principal de ambas secciones */
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 100%; /* Aumenta al 100% para dar espacio completo */
-    height: auto; /* Ajuste para que se adapte al contenido */
+    gap: 25px;
+    padding: 40px;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #0d0d30, #08081d);
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.5);
+    max-width: 900px;  /* Tamaño máximo aumentado */
+    width: 100%;
 }
 
+/* Estilo de las secciones */
+.simulator-section, .ecuationCalculate {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
 
+/* Título */
 .title__item {
-    color: antiquewhite;
-    font-size: 35px;
+    font-size: 2.5em; /* Título más grande */
     font-weight: bold;
-    text-align: center;
-    margin-bottom: 25px; 
+    color: #FFD700;
+    margin-bottom: 15px;
+    text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Controles principales */
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 500px; /* Anchura aumentada */
+}
+
+.controls label {
+    font-size: 1.2em; /* Texto de etiqueta más grande */
+    color: #b0b0b0;
+}
+
+/* Inputs y botones */
+.controls-row {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.controls input[type="number"], 
+.controls select {
+    width: 100%;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #444;
+    background-color: #222;
+    color: #ddd;
+    margin-bottom: 5px;
+    font-size: 1.2em; /* Texto más grande */
+}
+
+.controls-buttons {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.controls button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    flex: 1;
+    min-width: 140px;
+    font-size: 1.2em; /* Botones más grandes */
+}
+
+#ApplyControls {
+    background-color: #4A90E2;
+}
+
+#startSimulation {
+    background-color: #FFD700;
+}
+
+.controls button:hover {
+    opacity: 0.85;
+}
+
+/* Canvas */
+canvas {
+    width: 100%;
+    max-width: 700px; /* Tamaño máximo del canvas */
+    height: 500px;    /* Altura aumentada */
+    background-color: #161616;
+    border-radius: 10px;
+    box-shadow: 0px 5px 18px rgba(0, 0, 0, 0.6);
+}
+
+/* Estilo del contenedor ecuationCalculate */
+.ecuationCalculate label {
+    font-size: 1.2em; /* Tamaño de texto mayor */
+    color: #b0b0b0;
+}
+
+.ecuationCalculate input[type="number"],
+.ecuationCalculate input[type="text"] {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #444;
+    background-color: #222;
+    color: #ddd;
+    font-size: 1.2em; /* Texto más grande */
+    width: 100%;
+}
+
+#calculateResult {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 6px;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    min-width: 140px;
+    font-size: 1.2em; /* Botón más grande */
+}
+
+#calculateResult:hover {
+    background-color: #45a049;
+}
+
+#calculateResult:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
 }
 
 
-canvas {
-    width: 800px; /* Ancho del canvas */
-    height: 600px; /* Altura del canvas */
-    background: radial-gradient(circle, rgba(20, 20, 20, 1) 20%, rgba(0, 0, 0, 1) 80%);
-    border: 1px solid #ffffff;
+.ecuationCalculate iframe {
+    width: 100%;
+    max-width: 700px; /* Ajuste al contenedor más grande */
+    height: 400px;    /* Tamaño aumentado */
+    border-radius: 6px;
+    box-shadow: 0px 5px 18px rgba(0, 0, 0, 0.6);
 }
 
