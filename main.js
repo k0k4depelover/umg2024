@@ -37,7 +37,6 @@ let radiusOrbitFixed;
 let massPlanetFixed;
 const fadeDuration = 50; // Duración máxima de la vida de un punto
 let G= 6.674e-11;
-
 let periodOrbit;
 // Funciones para dibujar el Sol, la Tierra y la Luna
 function drawSun() {
@@ -63,11 +62,11 @@ function drawMoon() {
 
 // Inicializa posiciones de la Tierra y la Luna
 function initializePositions() {
-    posEarthX = posSunX + earthOrbitRadius * Math.cos(earthAngle);
-    posEarthY = posSunY + earthOrbitRadius * Math.sin(earthAngle);
+    posEarthX = posSunX + earthOrbitRadius //* Math.cos(earthAngle);
+    posEarthY = posSunY + earthOrbitRadius //* Math.sin(earthAngle);
     
-    posMoonX = posEarthX + moonOrbitRadius * Math.cos(moonAngle);
-    posMoonY = posEarthY + moonOrbitRadius * Math.sin(moonAngle);
+    posMoonX = posEarthX + moonOrbitRadius //* Math.cos(moonAngle);
+    posMoonY = posEarthY + moonOrbitRadius //* Math.sin(moonAngle);
 }
 
 // Función para actualizar las posiciones
@@ -219,6 +218,7 @@ document.getElementById("ApplyControls").addEventListener("click", function() {
                 currentSpeed = 1;
             } else {
                 currentSpeed *= 1.5; // Aumentar velocidad
+
             }
             break;
         case "decreaseSpeed":
@@ -251,5 +251,6 @@ document.getElementById("calculateResult").addEventListener("click", function ca
     document.getElementById("result").value = periodOrbit.toFixed(20); // Formato a dos decimales
     alert("El periodo ha sido calculado");
 });
+
 
 
